@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset='UTF-8'>
+  <title>Trivia Game</title>
+
+  <link rel='stylesheet' href='assets/css/bootstrap.css'>
+
+  <script src='https://code.jquery.com/jquery.js'></script>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <!-- JQuery -->
+
+</head>
+<body>
+  <div class="container">  <!-- main container -->
+	<div class="row">   <!-- first row  holds heading-->
+	  <div class="jumbotron">   <!-- jumbotron  -->
+	  <span>Really Trivial Trivia</span>
+	  </div>  <!-- jumbotron -->
+	</div>  <!-- first row -->
+	<div class="row">
+	  <div id="timerDisplay">Timer comes here</div>
+	</div> <!-- row 2 to hold timer display -->
+	<div class="row">   <!-- third row to hold Questions and Answers -->
+      <div class="panel-heading">
+        <h3 class="panel-title" id="question">Question 1</h3>
+      </div>  <!-- id = panel-heading -->
+
+      <div class="panel-body" id="answerPanels">
+        <button type="submit" style="border:1; background:black;" id="answerOne" class="btn btn-primary" value="1">Button One</button> <br>
+        <button type="submit" style="border:2; background:red;" id="answerTwo" class="btn btn-primary" value="2">Button Two</button> <br>
+        <button type="submit" style="border:3; background:orange;" id="answerThree" class="btn btn-primary" value="3">Button Three</button> <br>
+        <button type="submit" style="border:4; background:blue;" id="answerFour" class="btn btn-primary" value="4">Button Four</button>
+	  </div>  <!-- id = panel-body -->
+	</div>  <!-- third row to hold cystals images -->
+
+  </div>  <!-- main container -->
+
+
+  <script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
+</html>
