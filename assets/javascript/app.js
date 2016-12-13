@@ -74,6 +74,7 @@ function initTimerValue() {
 
 //  This code will run as soon as the page loads.
 window.onload = function() {
+	$("#replayQuestions").hide();
 	console.log("before updateQuestion arrayIndex = " + arrayIndex);
 	arrayIndex = updateQuestion (arrayIndex);
 	console.log("after updateQuestion arrayIndex = " + arrayIndex);
@@ -85,19 +86,19 @@ window.onload = function() {
     	console.log("right answer = " + questionsAndAnswers[arrayIndex].rightAnswer);
     	if (userAnswer === questionsAndAnswers[arrayIndex-1].rightAnswer) {
     		stopTimer();
-    		// $("#answerPanels").html("You Are Right");
+    		$("#answerPanels").html("You Are Right");
     		arrayIndex = updateQuestion (arrayIndex);
     		startTimer();
     	}
     });
-    
+
 	$("#answerTwo").on("click", function(event) {
 		userAnswer = $(this).text();
     	console.log("Two userAnswer =" + userAnswer);
     	console.log("right answer = " + questionsAndAnswers[arrayIndex-1].rightAnswer);
     	if (userAnswer === questionsAndAnswers[arrayIndex-1].rightAnswer) {
     		stopTimer();
-    		// $("#answerPanels").html("You Are Right");
+    		$("#answerPanels").html("You Are Right");
     		arrayIndex = updateQuestion (arrayIndex);
     		startTimer();
     	}
@@ -109,7 +110,7 @@ window.onload = function() {
     	console.log("right answer = " + questionsAndAnswers[arrayIndex].rightAnswer);
     	if (userAnswer === questionsAndAnswers[arrayIndex-1].rightAnswer) {
     		stopTimer();
-    		// $("#answerPanels").html("You Are Right");
+    		$("#answerPanels").html("You Are Right");
     		arrayIndex = updateQuestion (arrayIndex);
     		startTimer();
     	}
@@ -121,7 +122,7 @@ window.onload = function() {
     	console.log("right answer = " + questionsAndAnswers[arrayIndex-1].rightAnswer);
     	if (userAnswer === questionsAndAnswers[arrayIndex-1].rightAnswer) {
     		stopTimer();
-    		// $("#answerPanels").html("You Are Right");
+    		$("#answerPanels").html("You Are Right");
     		arrayIndex = updateQuestion (arrayIndex);
     		startTimer();
     	}
@@ -156,6 +157,7 @@ function updateQuestion(indexIntoArray) {
 	} else {
 		console.log("All Questions Answered")
 		$("#answerPanels").html("Want to Play Again ?")
+		$("#replayQuestions").show();
 	}
 
 }
