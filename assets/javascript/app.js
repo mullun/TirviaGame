@@ -61,7 +61,8 @@ function checkAnswerAndProceed (userClick) {
 		console.log("checkAnswerAndProceed called");
 		stopTimer();
 		$("#answerPanels").html("You Are Right");
-		// timerHandler = setInterval(initTimerValue, 2*1000);   // show Victory message for 1 second
+		timerHandler = setInterval(initTimerValue, 2*1000);   // show Victory message for 1 second
+		$("#answerPanels").hide();
 		console.log("calling updateQuestion arrayIndex = " + arrayIndex);
 		arrayIndex = updateQuestion (arrayIndex);  // update screen with next question
 		startTimer();
@@ -69,7 +70,7 @@ function checkAnswerAndProceed (userClick) {
 };
 
 function initTimerValue() {
-	currentTime = 30;
+	return true;
 }
 
 //  This code will run as soon as the page loads.
@@ -99,7 +100,7 @@ window.onload = function() {
     	if (userAnswer === questionsAndAnswers[arrayIndex-1].rightAnswer) {
     		stopTimer();
     		$("#answerPanels").html("You Are Right");
-    		arrayIndex = updateQuestion (arrayIndex);
+	   		arrayIndex = updateQuestion (arrayIndex);
     		startTimer();
     	}
 	});
@@ -126,6 +127,17 @@ window.onload = function() {
     		arrayIndex = updateQuestion (arrayIndex);
     		startTimer();
     	}
+	});
+
+    $("#playAgain").on("click", function(event) {
+		console.log("Play Again Clicked");
+		$("#replayQuestions").hide();  // hide the option buttons
+		$("#answerPanels").html("");
+		arrayIndex = 0;  // get ready to play again
+		console.log("before updateQuestion arrayIndex = " + arrayIndex);
+		arrayIndex = updateQuestion (arrayIndex);
+		console.log("after updateQuestion arrayIndex = " + arrayIndex);
+		startTimer();
 	});
 };
 
@@ -155,8 +167,8 @@ function updateQuestion(indexIntoArray) {
 		console.log("inside updateQuestion indexIntoArray = " + indexIntoArray);
 		return indexIntoArray;
 	} else {
-		console.log("All Questions Answered")
-		$("#answerPanels").html("Want to Play Again ?")
+		console.log("All Questions Answered");
+		$("#answerPanels").html("Want to Play Again ?");
 		$("#replayQuestions").show();
 	}
 
