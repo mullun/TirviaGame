@@ -137,7 +137,7 @@ window.onload = function() {
 		console.log("before updateQuestion arrayIndex = " + arrayIndex);
 		arrayIndex = updateQuestion (arrayIndex);
 		console.log("after updateQuestion arrayIndex = " + arrayIndex);
-		startTimer();
+		// startTimer();
 	});
 };
 
